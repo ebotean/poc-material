@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormBuilder } from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
@@ -10,24 +10,24 @@ import {map, startWith} from 'rxjs/operators';
 })
 export class MaterialInputComponent implements OnInit {
 
-  myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<string[]>;
+  autocompleteFormControl = new FormControl();
+  autocompleteOptions = ['Try this', 'Or this', 'Maybe that'];
 
-  constructor() { }
+  sampleForm = this.fb.group({
+    lifeChoice: ['']
+  });
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges
-        .pipe(
-          startWith(''),
-          map(value => this._filter(value))
-        );
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  onSubmit() {
+    console.log(this.sampleForm.value);
+  }
+  
+  updateValue(event) {
+    console.log(event);
   }
 
 }
