@@ -1,12 +1,19 @@
 <h1>Material Input</h1>
 
 <section name="autocomplete" id="autocomplete-input">
-	<form [formGroup]="sampleForm" class="example-form" (ngSubmit)="onSubmit()">
-	  <material-autocomplete [key]="'lifeChoice'" [placeholder]="'Escolha seu destino'" [form]="sampleForm" [options]="autocompleteOptions"></material-autocomplete>
+	<form [formGroup]="sampleForm" class="sample-form" (ngSubmit)="onSubmit()">
+		
+		<div class="container">
+				<material-autocomplete [key]="'lifeChoice'" [placeholder]="'Escolha seu destino'" [form]="sampleForm" [options]="autocompleteOptions" class="flex-item-1"></material-autocomplete>
+				<itau-search-bar [key]="'searchQuery'" [placeholder]="'Pesquisar por...'" [form]="sampleForm" [options]="searchOptions" class="flex-item-1"></itau-search-bar>
+		
+		</div>	
+		
 		<button type="submit">Enviar</button>
 	</form>
 
 	<p>
-		Form Value: {{ sampleForm.value | json }}
+		Form Values: {{ sampleForm.value | json }}
 	</p>
+	
 </section>

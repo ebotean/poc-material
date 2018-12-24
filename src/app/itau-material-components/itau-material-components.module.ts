@@ -4,9 +4,12 @@ import { MaterialAutocompleteComponent } from './material-autocomplete/material-
 import { MatAutocompleteModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { ItauSearchBarComponent } from './itau-search-bar/itau-search-bar.component';
+
 @NgModule({
   declarations: [
-    MaterialAutocompleteComponent
+    MaterialAutocompleteComponent,
+    ItauSearchBarComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
   ],
   exports: [
-    MaterialAutocompleteComponent
+    MaterialAutocompleteComponent,
+    ItauSearchBarComponent
   ]
 })
 export class ItauMaterialComponentsModule { }

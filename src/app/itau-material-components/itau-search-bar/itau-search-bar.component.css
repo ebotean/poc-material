@@ -1,0 +1,15 @@
+.form-field-full-width {
+	width: 100%;
+}
+
+.mat-form-field-infix {
+    outline: 1px solid red;
+}
+
+input::placeholder {
+    color: red;
+}
+
+input {
+    text-indent: 10px;
+}

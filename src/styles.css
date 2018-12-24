@@ -8,3 +8,14 @@
 	display: flex;
 	flex-wrap: wrap;
 }
+
+.flex-item-1 {
+	flex-grow: 2;
+	flex-basis: 1;
+	flex-shrink: auto;
+}
+
+/**
+*	Form elements
+*/
+

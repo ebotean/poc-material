@@ -12,9 +12,11 @@ export class MaterialInputComponent implements OnInit {
 
   autocompleteFormControl = new FormControl();
   autocompleteOptions = ['Try this', 'Or this', 'Maybe that'];
+  searchOptions = ['Operações', 'Boletas de despesas', 'Upload de boletas', 'Cotas', 'Download'];
 
   sampleForm = this.fb.group({
-    lifeChoice: ['']
+    lifeChoice: [''],
+    searchQuery: ['']
   });
 
   constructor(private fb: FormBuilder) { }
